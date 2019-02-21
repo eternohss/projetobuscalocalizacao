@@ -30,26 +30,6 @@ public class ClienteController {
 	private ClienteService clienteService;
 	
 	/**
-	 * SALVAR UM NOVO REGISTRO DE RISCO CLIENTE
-	 * @param cliente
-	 * @return
-	 */
-	@RequestMapping(value="/cliente/taxarisco", method = RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE,produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public @ResponseBody ResponseModel salvarTaxaRisco(@RequestBody Cliente cliente){
- 
-		try {
- 
-			this.clienteService.riscoCliente(cliente);
- 
-			return new ResponseModel(1,"Registro salvo com sucesso!");
- 
-		}catch(Exception e) {
- 
-			return new ResponseModel(0,e.getMessage());			
-		}
-	}
-	
-	/**
 	 * SALVAR UM NOVO REGISTRO
 	 * @param cliente
 	 * @return
